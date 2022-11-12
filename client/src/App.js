@@ -1,8 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 import BasicForm from "./components/BasicForm";
 
 function App() {
+  const [finalValue, setFinalValue] = useState(9);
+
+  const predictedValue = (val) => {
+    setFinalValue(val);
+  };
+
   return (
     <div className="App">
       <h1 style={{ color: "white" }}>Wine Quality Predictor</h1>
@@ -18,7 +25,10 @@ function App() {
           Azure Kubernetes Service{" "}
         </div>
       </h3>
-      <BasicForm />
+      <BasicForm predictedValue={predictedValue} />
+      {finalValue != 9 && (
+        <h2 style={{ color: "white" }}>Wine Quality: {finalValue}</h2>
+      )}
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import axios from "axios";
 import "./BasicForm.css";
 
-const BasicForm = () => {
+const BasicForm = (props) => {
   const [input, setInput] = useState({
     fa: "",
     va: "",
@@ -23,8 +24,29 @@ const BasicForm = () => {
     setInput({ ...input, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const inputVals = Object.values(input);
+    const inputObj = { data: [inputVals] };
+    const inputJson = JSON.stringify(inputObj);
+    // console.log(inputJson);
+    axios
+      .post(
+        "http://20.75.20.183:80/api/v1/service/job-service/score",
+        inputObj,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer XJmsSNofbC9QWx9Kc4tl8JnXvoPr2Yjw",
+          },
+        }
+      )
+      .then(function (response) {
+        props.predictedValue(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -35,7 +57,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.fa}
             onChange={handleInput}
             name="fa"
@@ -47,7 +68,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.va}
             onChange={handleInput}
             name="va"
@@ -59,7 +79,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.ca}
             onChange={handleInput}
             name="ca"
@@ -71,7 +90,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.rs}
             onChange={handleInput}
             name="rs"
@@ -83,7 +101,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.cl}
             onChange={handleInput}
             name="cl"
@@ -95,7 +112,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.fs}
             onChange={handleInput}
             name="fs"
@@ -107,7 +123,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.ts}
             onChange={handleInput}
             name="ts"
@@ -119,7 +134,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.de}
             onChange={handleInput}
             name="de"
@@ -131,7 +145,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.ph}
             onChange={handleInput}
             name="ph"
@@ -143,7 +156,6 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.su}
             onChange={handleInput}
             name="su"
@@ -155,15 +167,16 @@ const BasicForm = () => {
           <input
             className="form-input"
             type="number"
-            autoComplete="off"
             value={input.al}
             onChange={handleInput}
             name="al"
             id="al"
           />
         </div>
+        <button type="submit" className="button">
+          Predict Quality
+        </button>
       </form>
-      <button type="submit" className='button'>Predict Quality</button>
     </div>
   );
 };
