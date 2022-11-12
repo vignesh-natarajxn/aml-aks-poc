@@ -1,3 +1,4 @@
+
 import argparse
 import os
 import numpy as np
@@ -15,7 +16,7 @@ from sklearn.model_selection import cross_val_score
 # let user feed in 2 parameters, the dataset to mount or download, and the regularization rate of the logistic regression model
 parser = argparse.ArgumentParser()
 parser.add_argument('--data-folder', type=str, dest='data_folder', help='data folder mounting point')
-parser.add_argument('--max-depth', type=float, dest='max_depth', default=5, help='max depth')
+parser.add_argument('--max-depth', type=int, dest='max_depth', default=5, help='max depth')
 args = parser.parse_args()
 
 ###
@@ -25,8 +26,8 @@ print('Data folder:', data_folder)
 job_data = pd.read_csv(os.path.join(data_folder, 'jobs.csv'))
 
                         
-X = job_data.drop(columns =["sal"])
-y = job_data["sal"]
+X = job_data.drop(columns =["quality"])
+y = job_data["quality"]
 
 clf = DecisionTreeRegressor(random_state=0,max_depth = args.max_depth)
 rmse= np.mean(np.sqrt(-cross_val_score(clf, X, y, scoring="neg_mean_squared_error", cv = 5)))
