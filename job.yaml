@@ -1,0 +1,65 @@
+description: null
+tags:
+  _aml_system_ComputeTargetStatus: >-
+    {"AllocationState":"steady","PreparingNodeCount":0,"RunningNodeCount":0,"CurrentNodeCount":0}
+properties:
+  _azureml.ComputeTargetType: amlctrain
+  ContentSnapshotId: 5fdf15a5-b659-4259-9040-ac8105a7ed62
+  azureml.git.repository_uri: 'https://github.com/viknhat/aml-aks-poc.git'
+  mlflow.source.git.repoURL: 'https://github.com/viknhat/aml-aks-poc.git'
+  azureml.git.branch: main
+  mlflow.source.git.branch: main
+  azureml.git.commit: d39e6c3f5d4838582dcc974528d646840641876a
+  mlflow.source.git.commit: d39e6c3f5d4838582dcc974528d646840641876a
+  azureml.git.dirty: 'False'
+  ProcessInfoFile: azureml-logs/process_info.json
+  ProcessStatusFile: azureml-logs/process_status.json
+displayName: khaki_nail_j0hrr6br
+status: Failed
+experimentName: job_expt
+services:
+  Tracking:
+    jobServiceType: Tracking
+    port: null
+    endpoint: >-
+      azureml://eastus2.api.azureml.ms/mlflow/v1.0/subscriptions/cce65e11-e6d2-4fb0-a5b1-bc2013f9a6b5/resourceGroups/aml-aks-poc/providers/Microsoft.MachineLearningServices/workspaces/aml-aks-poc?
+    status: null
+    errorMessage: null
+    properties: null
+  Studio:
+    jobServiceType: Studio
+    port: null
+    endpoint: >-
+      https://ml.azure.com/runs/job_expt_1668162293_33049a30?wsid=/subscriptions/cce65e11-e6d2-4fb0-a5b1-bc2013f9a6b5/resourcegroups/aml-aks-poc/workspaces/aml-aks-poc
+    status: null
+    errorMessage: null
+    properties: null
+computeId: >-
+  /subscriptions/cce65e11-e6d2-4fb0-a5b1-bc2013f9a6b5/resourceGroups/aml-aks-poc/providers/Microsoft.MachineLearningServices/workspaces/aml-aks-poc/computes/cpucluster
+isArchived: false
+schedule: null
+identity: null
+jobType: Command
+resources:
+  instanceCount: 1
+  instanceType: null
+  properties: null
+codeId: >-
+  /subscriptions/cce65e11-e6d2-4fb0-a5b1-bc2013f9a6b5/resourceGroups/aml-aks-poc/providers/Microsoft.MachineLearningServices/workspaces/aml-aks-poc/codes/5fdf15a5-b659-4259-9040-ac8105a7ed62/versions/1
+command: ''
+environmentId: >-
+  azureml://locations/eastus2/workspaces/6f7360e0-658a-4233-8141-019587c2881d/environments/job-experiment-env/versions/1
+inputs: {}
+outputs:
+  default:
+    description: null
+    uri: >-
+      azureml://datastores/workspaceartifactstore/ExperimentRun/dcid.job_expt_1668162293_33049a30
+    mode: ReadWriteMount
+    jobOutputType: UriFolder
+distribution: null
+limits:
+  timeout: null
+  jobLimitsType: Command
+environmentVariables: {}
+parameters: {}

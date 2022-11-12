@@ -1,0 +1,295 @@
+{
+    "runId": "job_expt_1668162293_33049a30",
+    "runUuid": "5552c13c-2857-4a60-bfde-f1ebd0cc37e2",
+    "parentRunUuid": null,
+    "rootRunUuid": "5552c13c-2857-4a60-bfde-f1ebd0cc37e2",
+    "target": "cpucluster",
+    "status": "Failed",
+    "parentRunId": null,
+    "dataContainerId": "dcid.job_expt_1668162293_33049a30",
+    "createdTimeUtc": "2022-11-11T10:25:07.789325+00:00",
+    "startTimeUtc": "2022-11-11T10:39:37.462Z",
+    "endTimeUtc": "2022-11-11T10:41:09.938Z",
+    "error": {
+        "error": {
+            "code": "UserError",
+            "severity": null,
+            "message": "{\"NonCompliant\":\"Process '/azureml-envs/azureml_3c1830b94e6152fc662d96e725e87411/bin/python' exited with code 1 and error message 'Execution failed. Process exited with status code 1. Error: Traceback (most recent call last):\\n  File \\\"train.py\\\", line 5, in <module>\\n    import pandas as pd\\nModuleNotFoundError: No module named 'pandas'\\n\\n'. Please check the log file 'user_logs/std_log.txt' for more details.\"}\n{\n  \"code\": \"ExecutionFailed\",\n  \"target\": \"\",\n  \"category\": \"UserError\",\n  \"error_details\": [\n    {\n      \"key\": \"exit_codes\",\n      \"value\": \"1\"\n    }\n  ]\n}",
+            "messageFormat": null,
+            "messageParameters": {},
+            "referenceCode": null,
+            "detailsUri": null,
+            "target": null,
+            "details": [],
+            "innerError": null,
+            "debugInfo": null,
+            "additionalInfo": null
+        },
+        "correlation": null,
+        "environment": null,
+        "location": null,
+        "time": "0001-01-01T00:00:00+00:00",
+        "componentName": null
+    },
+    "warnings": [
+        {
+            "source": "SecondaryError",
+            "message": "AzureMLCompute job failed.\nExecutionFailed: [REDACTED]\n\texit_codes: 1"
+        }
+    ],
+    "tags": {
+        "_aml_system_ComputeTargetStatus": "{\"AllocationState\":\"steady\",\"PreparingNodeCount\":0,\"RunningNodeCount\":0,\"CurrentNodeCount\":0}"
+    },
+    "properties": {
+        "_azureml.ComputeTargetType": "amlctrain",
+        "ContentSnapshotId": "5fdf15a5-b659-4259-9040-ac8105a7ed62",
+        "azureml.git.repository_uri": "https://github.com/viknhat/aml-aks-poc.git",
+        "mlflow.source.git.repoURL": "https://github.com/viknhat/aml-aks-poc.git",
+        "azureml.git.branch": "main",
+        "mlflow.source.git.branch": "main",
+        "azureml.git.commit": "d39e6c3f5d4838582dcc974528d646840641876a",
+        "mlflow.source.git.commit": "d39e6c3f5d4838582dcc974528d646840641876a",
+        "azureml.git.dirty": "False",
+        "ProcessInfoFile": "azureml-logs/process_info.json",
+        "ProcessStatusFile": "azureml-logs/process_status.json"
+    },
+    "parameters": {},
+    "services": {},
+    "inputDatasets": [],
+    "outputDatasets": [],
+    "runDefinition": {
+        "script": "train.py",
+        "command": "",
+        "useAbsolutePath": false,
+        "arguments": [
+            "--data-folder",
+            "$AZUREML_DATAREFERENCE_workspaceblobstore",
+            "--max-depth",
+            "10"
+        ],
+        "sourceDirectoryDataStore": null,
+        "framework": "Python",
+        "communicator": "None",
+        "target": "cpucluster",
+        "dataReferences": {
+            "workspaceblobstore": {
+                "dataStoreName": "workspaceblobstore",
+                "mode": "Mount",
+                "pathOnDataStore": null,
+                "pathOnCompute": null,
+                "overwrite": false
+            }
+        },
+        "data": {},
+        "outputData": {},
+        "datacaches": [],
+        "jobName": null,
+        "maxRunDurationSeconds": null,
+        "nodeCount": 1,
+        "instanceTypes": [],
+        "priority": null,
+        "credentialPassthrough": false,
+        "identity": null,
+        "environment": {
+            "name": "job-experiment-env",
+            "version": "1",
+            "assetId": "azureml://locations/eastus2/workspaces/6f7360e0-658a-4233-8141-019587c2881d/environments/job-experiment-env/versions/1",
+            "autoRebuild": true,
+            "python": {
+                "interpreterPath": "python",
+                "userManagedDependencies": false,
+                "condaDependencies": {
+                    "name": "project_environment",
+                    "dependencies": [
+                        "python=3.8.13",
+                        {
+                            "pip": [
+                                "azureml-defaults~=1.47.0"
+                            ]
+                        },
+                        "scikit-learn"
+                    ],
+                    "channels": [
+                        "anaconda",
+                        "conda-forge"
+                    ]
+                },
+                "baseCondaEnvironment": null
+            },
+            "environmentVariables": {
+                "EXAMPLE_ENV_VAR": "EXAMPLE_VALUE"
+            },
+            "docker": {
+                "baseImage": "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:20221010.v1",
+                "platform": {
+                    "os": "Linux",
+                    "architecture": "amd64"
+                },
+                "baseDockerfile": null,
+                "baseImageRegistry": {
+                    "address": null,
+                    "username": null,
+                    "password": null
+                },
+                "enabled": false,
+                "arguments": []
+            },
+            "spark": {
+                "repositories": [],
+                "packages": [],
+                "precachePackages": true
+            },
+            "inferencingStackVersion": null
+        },
+        "history": {
+            "outputCollection": true,
+            "directoriesToWatch": [
+                "logs"
+            ],
+            "enableMLflowTracking": true,
+            "snapshotProject": true
+        },
+        "spark": {
+            "configuration": {
+                "spark.app.name": "Azure ML Experiment",
+                "spark.yarn.maxAppAttempts": "1"
+            }
+        },
+        "parallelTask": {
+            "maxRetriesPerWorker": 0,
+            "workerCountPerNode": 1,
+            "terminalExitCodes": null,
+            "configuration": {}
+        },
+        "amlCompute": {
+            "name": null,
+            "vmSize": null,
+            "retainCluster": false,
+            "clusterMaxNodeCount": 1
+        },
+        "aiSuperComputer": {
+            "instanceType": "D2",
+            "imageVersion": "pytorch-1.7.0",
+            "location": null,
+            "aiSuperComputerStorageData": null,
+            "interactive": false,
+            "scalePolicy": null,
+            "virtualClusterArmId": null,
+            "tensorboardLogDirectory": null,
+            "sshPublicKey": null,
+            "sshPublicKeys": null,
+            "enableAzmlInt": true,
+            "priority": "Medium",
+            "slaTier": "Standard",
+            "userAlias": null
+        },
+        "kubernetesCompute": {
+            "instanceType": null
+        },
+        "tensorflow": {
+            "workerCount": 1,
+            "parameterServerCount": 1
+        },
+        "mpi": {
+            "processCountPerNode": 1
+        },
+        "pyTorch": {
+            "communicationBackend": "nccl",
+            "processCount": null
+        },
+        "hdi": {
+            "yarnDeployMode": "Cluster"
+        },
+        "containerInstance": {
+            "region": null,
+            "cpuCores": 2,
+            "memoryGb": 3.5
+        },
+        "exposedPorts": null,
+        "docker": {
+            "useDocker": false,
+            "sharedVolumes": true,
+            "shmSize": "2g",
+            "arguments": []
+        },
+        "cmk8sCompute": {
+            "configuration": {}
+        },
+        "commandReturnCodeConfig": {
+            "returnCode": "Zero",
+            "successfulReturnCodes": []
+        },
+        "environmentVariables": {},
+        "applicationEndpoints": {},
+        "parameters": []
+    },
+    "logFiles": {
+        "azureml-logs/20_image_build_log.txt": "https://amlakspocstg.blob.core.windows.net/azureml/ExperimentRun/dcid.job_expt_1668162293_33049a30/azureml-logs/20_image_build_log.txt?sv=2019-07-07&sr=b&sig=GR%2BRU4aUVJOhdRBlTbPfI5aGS7QymVmgkrC8rNi75VM%3D&skoid=3f86da05-c84a-4950-b6d9-7addedb59d75&sktid=8ba6fca0-8377-468c-bea6-0097e950bc13&skt=2022-11-11T10%3A15%3A10Z&ske=2022-11-12T18%3A25%3A10Z&sks=b&skv=2019-07-07&st=2022-11-12T08%3A16%3A33Z&se=2022-11-12T16%3A26%3A33Z&sp=r"
+    },
+    "jobCost": {
+        "chargedCpuCoreSeconds": null,
+        "chargedCpuMemoryMegabyteSeconds": null,
+        "chargedGpuSeconds": null,
+        "chargedNodeUtilizationSeconds": null
+    },
+    "revision": 17,
+    "runTypeV2": {
+        "orchestrator": "Execution",
+        "traits": [
+            "scriptRun",
+            "remote",
+            "AlmostCommonRuntime",
+            "OsType:Linux",
+            "CommonRuntime"
+        ],
+        "attribution": "",
+        "computeType": "AmlcTrain"
+    },
+    "settings": {},
+    "computeRequest": {
+        "nodeCount": 1,
+        "gpuCount": 0
+    },
+    "compute": {
+        "target": "cpucluster",
+        "targetType": "amlcompute",
+        "vmSize": null,
+        "instanceType": null,
+        "instanceCount": 1,
+        "gpuCount": 0,
+        "priority": null,
+        "region": null
+    },
+    "createdBy": {
+        "userObjectId": "54c8be3c-ce4f-4cf1-9670-b07fecec5a13",
+        "userPuId": "1003200247F00760",
+        "userIdp": "live.com",
+        "userAltSecId": "1:live.com:000340013BBF53C2",
+        "userIss": "https://sts.windows.net/8ba6fca0-8377-468c-bea6-0097e950bc13/",
+        "userTenantId": "8ba6fca0-8377-468c-bea6-0097e950bc13",
+        "userName": "Vignesh Natarajan",
+        "upn": null
+    },
+    "computeDuration": "00:01:32.4763698",
+    "effectiveStartTimeUtc": null,
+    "runNumber": 1668162307,
+    "rootRunId": "job_expt_1668162293_33049a30",
+    "userId": "54c8be3c-ce4f-4cf1-9670-b07fecec5a13",
+    "statusRevision": 2,
+    "currentComputeTime": null,
+    "lastStartTimeUtc": null,
+    "lastModifiedBy": {
+        "userObjectId": "54c8be3c-ce4f-4cf1-9670-b07fecec5a13",
+        "userPuId": "1003200247F00760",
+        "userIdp": "live.com",
+        "userAltSecId": "1:live.com:000340013BBF53C2",
+        "userIss": "https://sts.windows.net/8ba6fca0-8377-468c-bea6-0097e950bc13/",
+        "userTenantId": "8ba6fca0-8377-468c-bea6-0097e950bc13",
+        "userName": "Vignesh Natarajan",
+        "upn": null
+    },
+    "lastModifiedUtc": "2022-11-11T10:35:44.1519392+00:00",
+    "duration": "00:01:32.4763698",
+    "inputs": null,
+    "outputs": null
+}
