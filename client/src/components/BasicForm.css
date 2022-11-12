@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 18px;
+  color: white;
+}
+
+.base {
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-div {
+  margin-bottom: 10px;
+}
+
+.form-input {
+  color: #fff;
+  background: rgb(31, 31, 31);
+  width: 50px;
+  height: 20px;
+}
+
+.button {
+  color: #fff;
+  font-size: 20px;
+  background: rgb(31, 31, 31);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
