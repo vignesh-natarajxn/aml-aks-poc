@@ -33,6 +33,7 @@ const BasicForm = (props) => {
     axios
       .post(
         "http://20.75.20.183:80/api/v1/service/job-service/score",
+        // "/api/v1/service/job-service/score",
         inputObj,
         {
           headers: {
