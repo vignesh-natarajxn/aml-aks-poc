@@ -4,7 +4,7 @@ import { useState } from "react";
 import BasicForm from "./components/BasicForm";
 
 function App() {
-  const [finalValue, setFinalValue] = useState(9);
+  const [finalValue, setFinalValue] = useState(99);
 
   const predictedValue = (val) => {
     setFinalValue(val);
@@ -26,8 +26,15 @@ function App() {
         </div>
       </h3>
       <BasicForm predictedValue={predictedValue} />
-      {finalValue != 9 && (
+      {finalValue != 99 && (
         <h2 style={{ color: "white" }}>Wine Quality: {finalValue}</h2>
+      )}
+      {finalValue == 99 && (
+        <div style={{ color: "grey", marginTop: "auto", width: "400px", marginLeft: "auto", marginRight: "auto" }}>
+          In order to use this website, CORS needs to be disabled and HTTP-HTTPS
+          requests needs to be enabled ('Allow' Insecure Content) on the
+          browser.
+        </div>
       )}
     </div>
   );
