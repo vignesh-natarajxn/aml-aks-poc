@@ -30,7 +30,15 @@ function App() {
         <h2 style={{ color: "white" }}>Wine Quality: {finalValue}</h2>
       )}
       {finalValue == 99 && (
-        <div style={{ color: "grey", marginTop: "auto", width: "400px", marginLeft: "auto", marginRight: "auto" }}>
+        <div
+          style={{
+            color: "grey",
+            marginTop: "10px",
+            width: "400px",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
           In order to use this website, CORS needs to be disabled and HTTP-HTTPS
           requests needs to be enabled ('Allow' Insecure Content) on the
           browser.
