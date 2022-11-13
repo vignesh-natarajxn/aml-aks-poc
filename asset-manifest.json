@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/aml-aks-poc/static/css/main.77623a0b.css",
-    "main.js": "/aml-aks-poc/static/js/main.5d868c59.js",
+    "main.js": "/aml-aks-poc/static/js/main.1b658be1.js",
     "static/media/logo.svg": "/aml-aks-poc/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/aml-aks-poc/index.html",
     "main.77623a0b.css.map": "/aml-aks-poc/static/css/main.77623a0b.css.map",
-    "main.5d868c59.js.map": "/aml-aks-poc/static/js/main.5d868c59.js.map"
+    "main.1b658be1.js.map": "/aml-aks-poc/static/js/main.1b658be1.js.map"
   },
   "entrypoints": [
     "static/css/main.77623a0b.css",
-    "static/js/main.5d868c59.js"
+    "static/js/main.1b658be1.js"
   ]
 }
