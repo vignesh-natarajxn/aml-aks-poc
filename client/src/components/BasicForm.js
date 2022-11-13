@@ -28,8 +28,6 @@ const BasicForm = (props) => {
     e.preventDefault();
     const inputVals = Object.values(input);
     const inputObj = { data: [inputVals] };
-    const inputJson = JSON.stringify(inputObj);
-    // console.log(inputJson);
     axios
       .post(
         "http://20.75.20.183:80/api/v1/service/job-service/score",
