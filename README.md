@@ -1,4 +1,4 @@
-# In order to use github pages, CORS needs to be disabled and HTTP-HTTPS requests needs to be enabled('Allow' Insecure Content) on the browser.
+# In order to use github pages, CORS needs to be disabled and HTTP-HTTPS requests needs to be enabled ('Allow' Insecure Content) on the browser.
 
 ## A full-stack application serving as Proof of Concept for AML + AKS deployed model
 
