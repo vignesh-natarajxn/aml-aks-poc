@@ -1,15 +1,15 @@
 CREATE TABLE WineData (
-	FixedAcidity int,
-	VolatileAcidity int,
-	CitricAcid int,
-	ResidualSugar int,
-	Chlorides int,
-	FreeSulfurDioxide int,
-	TotalSulfurDioxide int,
-	Density int,
-	PH int,
-	Sulphates int,
-	Alcohol int,
+	FixedAcidity FLOAT,
+	VolatileAcidity FLOAT,
+	CitricAcid FLOAT,
+	ResidualSugar FLOAT,
+	Chlorides FLOAT,
+	FreeSulfurDioxide FLOAT,
+	TotalSulfurDioxide FLOAT,
+	Density FLOAT,
+	PH FLOAT,
+	Sulphates FLOAT,
+	Alcohol FLOAT,
 );
 INSERT INTO WineData
 values (
