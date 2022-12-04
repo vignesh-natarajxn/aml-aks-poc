@@ -30,7 +30,7 @@ const BasicForm = (props) => {
     const inputObj = { data: [inputVals] };
     axios
       .post(
-        "http://20.75.20.183:80/api/v1/service/job-service/score",
+        "http://20.22.162.30:80/api/v1/service/aml-aks-service/score",
         // "/api/v1/service/job-service/score",
         inputObj,
         {
